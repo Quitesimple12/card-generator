@@ -3,27 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+        padding: 20px;
+      }
+      .cardBody {
+        width: 200px;
+        height: 350px;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: white;
+        position: relative;
+      }
+
+      #suit1 {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        font-size: 40px;
+      }
+
+      #suit2 {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        font-size: 40px;
+      }
+
+      #number {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 75px;
+      }
+      #changeCard {
+        color: red;
+        font-size: 50px;
+        margin-left: 100px;
+      }
+    </style>
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+    <div id="card" class="cardBody">
+      <div id="suit1"></div>
+      <div id="number"></div>
+      <div id="suit2"></div>
+    </div>
+    <div>
+      <label for="width">Width</label>
+      <input
+        type="text"
+        id="width"
+        name="width"
+        value="200"
+        onchange="changeWidth()"
+      />
+      <label for="Height">Height</label>
+      <input
+        type="text"
+        id="height"
+        name="height"
+        value="350"
+        onchange="changeHeight()"
+      />
+    </div>
+    <div>
+      <button id="changeCard" type="submit">
+        Change Card
+      </button>
     </div>
   </body>
 </html>
